@@ -9,6 +9,8 @@ writing tests with Jest and Enzyme
 2. Imagine telling a friend 'here's what this bit of code does'
 3. Write a test to verify each part does what you expect
 
+<hr />
+
 ### Testing design
 
 - App component
@@ -34,6 +36,7 @@ expect(value that we are inspecting). matcher statement (value that we expect to
 
 > Once a test passes, try to break it!
 
+<hr />
 ## Enzyme API
 
 > I'm aware that Enzyme is deprecated at the time of writing (April 2022) and I will be using React Testing Library after this project.
@@ -44,8 +47,18 @@ Render the given component and return plain HTML
 
 ### Shallow
 
-Render 'just' the given component and non of it's children
+Render 'just' the given component and none of it's children
 
 ### Full DOM
 
 Render the component and all of the its children + let us modify it afterwards
+
+<hr />
+
+### Simulating Events
+
+- Find the element
+- Simulate a 'change' event
+- Provide a fake event object
+- Force the component to update: setState is async so we are forcing the component to rerender
+- Assert that the textAreas value has changed
