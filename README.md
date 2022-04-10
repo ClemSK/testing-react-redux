@@ -1,6 +1,8 @@
-# testing-react-redux
+# Testing with React-Redux
 
-writing tests with Jest and Enzyme
+## Writing tests with Jest and Enzyme
+
+<hr >
 
 ## How to start writing tests
 
@@ -37,9 +39,10 @@ expect(value that we are inspecting). matcher statement (value that we expect to
 > Once a test passes, try to break it!
 
 <hr />
+
 ## Enzyme API
 
-> I'm aware that Enzyme is deprecated at the time of writing (April 2022) and I will be using React Testing Library after this project.
+> I'm aware that Enzyme is deprecated at the time of writing (April 2022) and I will be switching to React Testing Library after this project.
 
 ### Static
 
