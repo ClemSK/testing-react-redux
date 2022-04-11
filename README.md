@@ -2,8 +2,6 @@
 
 ## Writing tests with Jest and Enzyme
 
-<hr >
-
 ## How to start writing tests
 
 1. Look at each part of the app

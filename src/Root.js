@@ -1,10 +1,20 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import reduxPromise from 'redux-promise';
 import reducers from 'reducers';
 
-export default (props) => {
+// destructuring the props to pass the initialState to other components with a default of
+// an empty object
+export default ({ children, initialState = {} }) => {
+  // asynchronous action creators
+  const store = createStore(
+    reducers,
+    initialState,
+    applyMiddleware(reduxPromise)
+  );
   return (
-    <Provider store={createStore(reducers, {})}>{props.children}</Provider>
+    //   we can now provide some optional starting state for the comment list
+    <Provider store={createStore(reducers, initialState)}>{children}</Provider>
   );
 };
