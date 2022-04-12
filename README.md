@@ -81,6 +81,6 @@ Render the component and all of the its children + let us modify it afterwards
 
 - Simulating click event on the button element
 - action creator gets called
-- request is issued
+- request is issued - with moxios
 - test suite checks to see if 2 LIs are visible
-- request succeeds, reducer picks up comments
+- request succeeds, reducer picks up comments - provided by moxioss
