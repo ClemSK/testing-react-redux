@@ -15,6 +15,6 @@ export default ({ children, initialState = {} }) => {
   );
   return (
     //   we can now provide some optional starting state for the comment list
-    <Provider store={createStore(reducers, initialState)}>{children}</Provider>
+    <Provider store={store}>{children}</Provider>
   );
 };
