@@ -63,3 +63,24 @@ Render the component and all of the its children + let us modify it afterwards
 - Provide a fake event object
 - Force the component to update: setState is async so we are forcing the component to rerender
 - Assert that the textAreas value has changed
+
+<hr>
+
+### Unit vs Integration tests
+
+| Unit                                                  | Integration                                          |
+| ----------------------------------------------------- | ---------------------------------------------------- |
+| Few parts                                             | Many parts                                           |
+| Does the CommentBox show a button?                    | Does clicking 'Fetch Comments' show a list of 'LI's? |
+| Does the CommentList produce a list of 'LI' elements? |                                                      |
+| Does the action creator return an object?             |                                                      |
+
+<hr />
+
+### What's happening in the integration test
+
+- Simulating click event on the button element
+- action creator gets called
+- request is issued
+- test suite checks to see if 2 LIs are visible
+- request succeeds, reducer picks up comments
