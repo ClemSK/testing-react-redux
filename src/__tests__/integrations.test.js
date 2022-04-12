@@ -16,7 +16,7 @@ afterEach(() => {
   moxios.uninstall();
 });
 
-it('can fetch a list of comments and display them', () => {
+it('can fetch a list of comments and display them', (done) => {
   // 1. attempt to render the entire app
   const wrapped = mount(
     <Root>
@@ -27,6 +27,15 @@ it('can fetch a list of comments and display them', () => {
   // 2. find the 'fetchComments' button and click it
   wrapped.find('.fetch-comments').simulate('click');
 
-  // 3. expect to find a list of comments
-  expect(wrapped.find('li').length).toEqual(2);
+  moxios.wait(() => {
+    //   to update the components with the comments
+    wrapped.update();
+    // 3. expect to find a list of comments
+    expect(wrapped.find('li').length).toEqual(2);
+
+    // 'done' signals to jest that the function has been completed and that it can complete the function
+    // the setTimeout was added to give moxios time to run and not throw a Jest error
+    done();
+    wrapped.unmount();
+  });
 });
